@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Computational Neuroanatomy Lab
+  </title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
+  <style>
+   html, body {
+            font-family: 'Khmer MN', serif;
+            background-color: #ffffff;
+            color: #343a40;
+            height: 100%;
+    	    margin: 0;
+             display: flex;
+             flex-direction: column;		
+            }
+        
+        header {
+            display: flex;
+            align-items: center; /* Vertically centers the logo */
+            justify-content: center;
+            background-color: #e6e9e9ff; /* headre color */
+            color: #222d2e;
+            padding: 1rem 0;
+            position: relative;
+            height: 130px; /* Adjust height if necessary */
+        }
+        
+        .container {
+            min-height: 100vh; /* Ensures the content takes at least the full viewport height */
+            display: flex;
+            flex-direction: column;
+        }
+
+	.content {
+	    flex: 1; /* Pushes the footer down */
+	}
+
+        .logo {
+            margin-right: 20px; /* Space between the logo and the text */
+            width: 117px; /* Adjust size */
+            height: auto;
+        }
+
+        .header-text {
+    	    text-align: center;
+            font-family: "Georgia", serif; /* Default for all text */
+        }
+
+        .header-text h1 {
+            font-family: "Khmer MN", serif; !important;
+            font-size: 2.5rem;
+        }
+
+        /* Responsive adjustments */
+       @media (max-width: 768px) {
+        .header-text h1 {
+            font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+        .header-text h1 {
+            font-size: 1.5rem;
+            }
+        }
+        
+        nav {
+            background-color: #bac3c4ff;
+            padding: 0.5rem 0;
+            text-align: center;
+        }
+        
+        nav a {
+            color: #222d2e; !important;
+            margin: 0 1rem;
+            text-decoration: none;
+            font-weight: lighter;
+            font-size: 1rem;
+            cursor: pointer;
+            font-family: 'Roboto', Tahoma, Arial, sans-serif;
+        }
+        
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .home-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center; /* Align items to the top */
+                text-align: left; /* Ensure text stays aligned left */
+        }
+            
+        .home-text {
+                margin-left: 0rem; /* Adds space between the text and the image */
+                width: 60%; /* Adjust the width as needed to control text width */
+        }
+
+        .home-image {
+                display: flex;
+                justify-content: center; /* Center image horizontally */
+        }
+
+        .home-image img {
+                width: 100vw; /* Make the image span the full viewport width */
+                object-fit: cover; /* Ensures the image covers the entire space without distortion */
+                display: block; /* Removes unwanted extra spaces */
+                margin: 0 auto; /* Centers the image */
+                margin-top: -1.5rem;
+                margin-bottom: 2rem; /* Add distance below the image */
+        }
+
+        .home-aka img {
+            display: flex;
+            margin-top: -1rem;
+            margin-left: -2rem;
+            max-width: 60%; /* Makes the image responsive */
+                height: auto; /* Maintains the image's aspect ratio */
+        }
+
+       	.section {
+            display: none;
+	    display: none;
+            padding: 2rem; /* Add padding to ensure content does not touch the edges */
+            max-width: 90%; /* Adjust the max-width as needed */
+            margin: 0 auto; /* Center the section horizontally */
+            text-align: left; /* Align text to the left */
+        }
+        .section.active {
+            display: block;
+        }
+
+        .section h2 {
+                margin-bottom: 1rem; /* Space below headings */
+        }
+
+        /* Optional: adjust padding and margin of content elements */
+        .section p {
+                margin-bottom: 1rem; /* Space between paragraphs */
+        }
+
+        footer {
+            background-color: #222d2e;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            width: 100%;
+	    /* position: relative; */
+        }
+        
+        /* General responsive layout */
+        body {
+            font-size: 16px;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .header-text h1 {
+            font-size: 2rem;
+        }
+
+        /* For screens larger than 1200px */
+        @media (min-width: 1200px) {
+            .home-text {
+                margin-left: -15rem;
+                width: 40%;
+            }
+        }
+
+        /* For tablets and smaller laptops (between 768px and 1200px) */
+        @media (max-width: 1200px) {
+            .home-text {
+                margin-left: -5rem;
+                width: 60%;
+            }
+
+            .header-text h1 {
+                font-size: 2rem;
+            }
+
+            nav a {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* For mobile devices (max-width: 768px) */
+        @media (max-width: 768px) {
+            .home-text {
+                width: 90%; /* Use most of the available screen width */
+                margin-left: 0;
+            }
+
+            .home-image img {
+                max-width: 80%; /* Make the image fit better on mobile */
+                margin: 0 auto;
+            }
+
+            .header-text h1 {
+                font-size: 1.8rem;
+            }
+
+            .team-photo {
+                width: 70px; /* Smaller team member images for mobile */
+                margin-left: 1rem;
+            }
+
+            .home-aka img {
+                margin-left: 0;
+                max-width: 100%;
+            }
+
+            /* Adjust the nav links for smaller screens */
+            nav {
+                flex-direction: column;
+            }
+
+            nav a {
+                margin: 0.5rem 0;
+                font-size: 1rem;
+            }
+        }
+        
+        .research-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.project {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fafafa;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    gap: 20px;
+}
+
+.project-text {
+    flex: 1;
+    font-size: 0.95rem;
+    color: #333;
+    text-align: left;
+}
+
+.project-image img {
+    width: auto;
+    height: 120px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+/* Responsive stacking on small screens */
+@media (max-width: 768px) {
+    .project {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .project-text {
+        text-align: center;
+    }
+
+    .project-image img {
+        width: 100%;
+        max-width: 250px;
+        height: auto;
+    }
+}
+
+        /* Extra small devices like phones (max-width: 480px) */
+        @media (max-width: 480px) {
+            .header-text h1 {
+                font-size: 1.5rem;
+            }
+
+            .home-text {
+                width: 95%;
+            }
+
+            nav a {
+                font-size: 0.8rem;
+            }
+
+            footer {
+                padding: 0.5rem;
+            }
+        }
+  </style>
+  <script>
+   function showTab(tabId) {
+            var sections = document.getElementsByClassName('section');
+            for (var i = 0; i < sections.length; i++) {
+                sections[i].classList.remove('active');
+            }
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        // Function to load external content into the Publications, Team, and Research sections
+        function loadContent() {
+            fetch('publications.html')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById('publications').innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Failed to load content:', error);
+                });
+
+
+            fetch('team_members.html')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById('team').innerHTML += data;
+                })
+                .catch(error => {
+                    console.error('Failed to load content:', error);
+                });
+
+            fetch('research.html')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById('research').innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Failed to load content:', error);
+                });
+
+
+            fetch('resources.html')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    document.getElementById('resources').innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('Failed to load content:', error);
+                });
+
+        }
+
+        // Show the "Home" tab by default when the page loads
+        window.onload = function() {
+            showTab('home');
+            loadContent(); // Load external content when the page loads
+        }
+  </script>
+ </head>
+ <body>
+  <header>
+   <img alt="Lab Logo" class="logo" src="images/logo.png?v=2"/>
+   <div class="header-text">
+    <h1>
+     Computational Neuroanatomy Lab
+    </h1>
+    <p>
+     Advancing Brain Microstructure Mapping
+    </p>
+   </div>
+  </header>
+  <nav>
+   <a onclick="showTab('home')">
+    HOME
+   </a>
+   <a onclick="showTab('team')">
+    TEAM
+   </a>
+   <a onclick="showTab('research')">
+    RESEARCH
+   </a>
+   <a onclick="showTab('publications')">
+    PUBLICATIONS
+   </a>
+   <a onclick="showTab('resources')">
+    RESOURCES
+   </a>
+   <a onclick="showTab('contact')">
+    CONTACT
+   </a>
+  </nav>
+  <div class="content">
+   <div class="section active" id="home">
+    <div class="home-content">
+     <div class="home-image">
+      <img alt="EM Seg" src="images/header.jpg">
+      </img>
+     </div>
+     <div class="home-text">
+      <p>
+       <b> Computational Neuroanatomy Lab </b>, led by Dr. Ali Abdollahzadeh, is affiliated with the A.I. Virtanen Institute for Molecular Sciences at the University of Eastern Finland.
+       <br/>
+       We seek to understand the statistical properties and organizational principles of brain tissue microstructures fundamental to understanding the macroscopic diffusion MRI signal—spanning across two to three orders of magnitude in spatial resolution.       
+       <br/>
+       We recently developed the <b>scattering framework</b> for diffusion in a tube with varying cross-sectional area and uncovered the relevant parameters that govern the diffusive dynamics of water in axons with Prof. Novikov.
+       <br/>
+         To support this effort, we have introduced a family of computational tools that bridge microgeometry and diffusion: <b>Scattering to Diffusion</b> for linking structure to signal, and <b>ACSON</b>, <b>DeepACSON</b>, <b>gACSON</b>, and <b>Skeletonize</b> for segmentation and morphological analysis of large-scale electron microscopy volumes.
+          These developments have enabled realistic reconstructions of white matter microgeometry and its quantitative connection to diffusion MRI, supported by our publicly available datasets and tools.      
+          </p>
+      
+      <h3>
+       Funding
+      </h3>
+      <!-- Added header here -->
+      <p>
+       Research Council of Finland
+       <p>
+        <div class="home-aka">
+         <img alt="AKA" src="images/AKA.jpg"/>
+        </div>
+       </p>
+      </p>
+     </div>
+    </div>
+   </div>
+   <div class="section" id="team">
+    <!-- h2>Meet the Team</h2 -->
+    <!-- External content will be loaded here -->
+   </div>
+   <div class="section" id="publications">
+    <h2>
+     Publications
+    </h2>
+    <!-- External content will be loaded here -->
+   </div>
+   <div class="section" id="research">
+    <h2>
+     Research
+    </h2>
+    <!-- External content will be loaded here -->
+   </div>
+   <div class="section" id="resources">
+    <h2>
+     Resources
+    </h2>
+    <!-- External content will be loaded here -->
+   </div>
+   <div class="section" id="contact">
+    <h2>
+     Contact
+    </h2>
+    <p>
+     Principal Investigator: Ali Abdollahzadeh, PhD
+     <br/>
+     Computational Neuroanatomy Lab
+     <br/>
+     University of Eastern Finland | UEF | A.I. Virtanen Institute for Molecular Sciences
+     <br/>
+     Neulaniementie 2 | P.O. Box 1627 | 70211 Kuopio | Finland
+     <br/>
+     Email: aliabd#uef.fi#
+    </p>
+   </div>
+  </div>
+  <footer>
+   <p>
+    © 2024 Computational Neuroanatomy Lab | All rights reserved.
+   </p>
+  </footer>
+ </body>
+</html>
