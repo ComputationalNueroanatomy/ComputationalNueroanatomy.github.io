@@ -661,3 +661,95 @@ footer::before {
     border-bottom: 3px solid var(--accent);
     display: inline-block;
 }
+
+/* ==========================================================================
+   Team — grouped researcher / intern grid
+   Members with bios stay as featured rows (.team-member); everyone else is
+   pulled into one compact, modular grid (Swiss grid + Bento card patterns).
+   ========================================================================== */
+.team-grid-label {
+    margin: 2.5rem 0 0;
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-muted);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 1.25rem;
+    margin-top: 1rem;
+}
+
+.member-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: var(--text);
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 1.75rem 1.25rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.member-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+
+.member-photo {
+    width: 104px;
+    height: 104px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0.9rem;
+    background: var(--bg-alt);
+    border: 3px solid var(--accent-soft);
+}
+
+.member-name {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    color: var(--text);
+}
+
+.member-role {
+    margin: 0.35rem 0 0;
+    color: var(--accent);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.72rem;
+}
+
+.member-note {
+    margin: 0.55rem 0 0;
+    font-size: 0.85rem;
+    line-height: 1.45;
+    color: var(--text-muted);
+}
+
+/* Open-position / hiring card */
+.member-card--cta { border-style: dashed; border-color: var(--accent); background: var(--accent-soft); }
+.member-card--cta:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.member-photo--placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    border: 3px dashed var(--accent);
+    background: transparent;
+}
+.member-cta { margin-top: 0.7rem; font-size: 0.8rem; font-weight: 600; color: var(--accent); }
+.member-card--cta:hover .member-cta { color: var(--accent-hover); }
+
+@media (max-width: 600px) {
+    .team-grid { grid-template-columns: repeat(2, 1fr); gap: 0.85rem; }
+    .member-card { padding: 1.4rem 0.85rem; }
+    .member-photo { width: 88px; height: 88px; }
+    .member-name { font-size: 0.92rem; }
+}
