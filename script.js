@@ -21,8 +21,6 @@ document.addEventListener('keydown', event => {
     resetNavigation(); toggle.focus();
   }
 });
-function revealPublications() {
-  if (window.location.hash === '#all-publications') document.querySelector('#all-publications').open = true;
-}
-window.addEventListener('hashchange', revealPublications);
-revealPublications();
+// Preserve bookmarks from the former single-page website.
+const legacySections = {research:'research.html',publications:'publications.html','all-publications':'publications.html',resources:'resources.html',people:'people.html',news:'news.html',join:'contact.html#join',contact:'contact.html'};
+if ((location.pathname.endsWith('/') || location.pathname.endsWith('/index.html')) && legacySections[location.hash.slice(1)]) location.replace(legacySections[location.hash.slice(1)]);

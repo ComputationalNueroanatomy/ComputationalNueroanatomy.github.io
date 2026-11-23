@@ -4,3 +4,6 @@
 
 /* Display only the supplied reconstruction within the hero reference, preserving its pixels and shadow. */
 .hero-art{display:block;position:relative;overflow:hidden;aspect-ratio:940/610;mix-blend-mode:multiply}.hero-figure .hero-art img{position:absolute;width:188.723404%;max-width:none;height:auto;left:-84.042553%;top:-18.032787%;background:transparent;border-radius:0;filter:none}
+
+/* Shared multipage layout */
+nav{gap:18px}nav a[aria-current="page"]{color:var(--teal);text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:9px}.page-intro{padding-top:65px;padding-bottom:30px;border-bottom:1px solid var(--line)}.page-intro h1{font-size:clamp(38px,4vw,58px);margin-bottom:20px}.page-intro .lead{max-width:780px}.inner-page>section:first-of-type{margin-top:45px}.inner-page{min-height:55vh}.publication-page .publication-list h3{font-size:20px;line-height:1.45}.publication-page .publication-list li{padding-block:26px}.page-end-link{margin-top:35px}.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px}.contact-grid address{font-style:normal;line-height:1.9}.home-explore p{font-size:16px}@media(max-width:760px){.page-intro{padding-top:35px;padding-bottom:20px}.contact-grid{grid-template-columns:1fr;gap:30px}.publication-page .publication-list h3{font-size:18px}nav{gap:20px}}
