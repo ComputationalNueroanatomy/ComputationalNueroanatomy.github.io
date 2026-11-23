@@ -1,10 +1,6 @@
-Verified 22 November 2026
-
-Desktop: 1440px viewport, no horizontal overflow.
-Mobile: 390px viewport, no horizontal overflow.
-All page images loaded successfully.
-Mobile menu opens, navigation reaches People, menu closes.
-All publications link expands list containing seven papers.
-All local HTML links, fragment targets, stylesheets, scripts, and images resolve.
-No build required. Fonts and images are self-contained.
-External URLs are sourced from cnalab.dev; publisher and dataset verification limitations are recorded in content-notes.html.
+Multipage update, 23 November 2026
+All seven main pages have unique titles, one h1, and active-page navigation.
+All local links and fragment targets checked.
+Browser navigation tested from Home through Research, Publications, Resources, People, News, and Contact.
+No horizontal overflow observed in the desktop browser.
+Responsive shared layout and mobile menu retained.

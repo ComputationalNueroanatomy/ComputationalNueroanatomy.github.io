@@ -1,16 +1,9 @@
-CNALab — separate website preview
+CNALab multipage website
 
-Open index.html in a browser. All assets and fonts are local.
-Optional local server: python3 -m http.server 8765
-Then visit http://localhost:8765
+Pages: index.html, research.html, publications.html, resources.html, people.html, news.html, contact.html.
 
-GitHub Pages compatible: upload this directory's contents to a dedicated
-repository or branch, then configure Pages to serve its root when approved.
-No build step is needed. .nojekyll is included. Relative links support project
-subpaths. No CNAME or automated publishing workflow is included.
-
-Content choices and verification limits: content-notes.html.
-Source copy: the original live site was only read, never modified.
-Hero: supplied white-background rendering, displayed using CSS clipping.
-Original snapshot1.png remains unchanged as assets/segmentation.png.
-Typography: locally hosted Manrope; see assets/OFL.txt.
+Open index.html locally, or run python3 -m http.server 8765 from this directory.
+Static GitHub Pages site with local fonts and assets; no build required.
+Navigation and footer appear on every page. Older homepage section bookmarks are redirected to the relevant page.
+The white hero uses the supplied presentation rendering.
+Content provenance and limitations: content-notes.html.
