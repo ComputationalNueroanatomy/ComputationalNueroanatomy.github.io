@@ -11,5 +11,6 @@ subpaths. No CNAME or automated publishing workflow is included.
 
 Content choices and verification limits: content-notes.html.
 Source copy: the original live site was only read, never modified.
-Hero: original user-supplied snapshot1.png, kept unchanged as assets/segmentation.png.
+Hero: supplied white-background rendering, displayed using CSS clipping.
+Original snapshot1.png remains unchanged as assets/segmentation.png.
 Typography: locally hosted Manrope; see assets/OFL.txt.
